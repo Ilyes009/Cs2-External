@@ -1,5 +1,6 @@
 #pragma once
-#include <Globals/Includes.hpp>
+#include "../Globals/Includes.hpp"
+
 #define RED FOREGROUND_RED | FOREGROUND_INTENSITY
 #define YELLOW FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_INTENSITY
 #define WHITE FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE

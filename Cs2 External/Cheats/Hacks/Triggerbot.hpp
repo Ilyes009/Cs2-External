@@ -1,9 +1,10 @@
 #pragma once
-#include <Memory/Memory.hpp>
-#include <Inputs/Events.hpp>
-#include <Readers/Game.hpp>
-#include <Readers/LocalPlayer.hpp>
-#include <Utilities/Config.hpp>
+#include "../../Source/Memory/Memory.hpp"
+#include "../../Source/Inputs/Events.hpp"
+#include "../Readers/Game.hpp"
+#include "../Readers/LocalPlayer.hpp"
+#include "../Utilities/Config.hpp"
+
 
 
 VOID TRIGGER_BOT()

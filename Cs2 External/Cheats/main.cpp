@@ -3,14 +3,15 @@
 #include <iostream>
 #include <TlHelp32.h>
 #include <d3d11.h>
-#include <Overlay/Overlay.hpp>
-#include <Functions/Console.hpp>
-#include <Interfaces/Loader.hpp>
-#include <Memory/Memory.hpp>
-#include <Memory/Handle.hpp>
-#include "pch.h"
-#include <Overlay/ExeConfig.hpp>
+#include <thread>
+#include <chrono>
 
+// Inclusions des headers de votre projet
+#include "../Source/Functions/Console.hpp"
+#include "../Source/Interfaces/Loader.hpp"
+#include "../Source/Memory/Memory.hpp"
+#include "../Source/Memory/Handle.hpp"
+#include "../Source/Overlay/Overlay.hpp"
 HANDLE Memory::ProcessHandle = NULL;
 
 INT APIENTRY WinMain(HINSTANCE instance, HINSTANCE, PSTR, INT cmd_show)
@@ -53,7 +54,7 @@ INT APIENTRY WinMain(HINSTANCE instance, HINSTANCE, PSTR, INT cmd_show)
     MSG msg{};
     while (Flags::IsRunning)
     {
-      //  std::this_thread::sleep_for(std::chrono::milliseconds(1));
+        //  std::this_thread::sleep_for(std::chrono::milliseconds(1));
         while (PeekMessage(&msg, nullptr, 0U, 0U, PM_REMOVE))
         {
             TranslateMessage(&msg);
@@ -107,7 +108,7 @@ INT APIENTRY WinMain(HINSTANCE instance, HINSTANCE, PSTR, INT cmd_show)
 
         swap_chain->Present(0U, 0U);
     }
-    
+
     CleanUp(swap_chain, device, device_context, render_target_view, window, {});
 
     return 0;

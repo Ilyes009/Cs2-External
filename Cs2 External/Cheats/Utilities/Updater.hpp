@@ -9,8 +9,9 @@
 #include <iomanip>
 #include <sstream>
 #include <filesystem>
-#include <Json/Json.hpp>
-#include <Globals/Globals.hpp>
+#include "../../Source/ExternalLibs/Json/Json.hpp"
+#include "../../Source/Globals/Globals.hpp"
+
 
 using json = nlohmann::json;
 namespace fileSys = std::filesystem;

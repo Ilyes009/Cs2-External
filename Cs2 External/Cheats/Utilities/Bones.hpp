@@ -1,6 +1,6 @@
 #pragma once
-#include <Memory/Memory.hpp>
-#include <Globals/Globals.hpp>
+#include "../../Source/Memory/Memory.hpp"
+#include "../../Source/Globals/Globals.hpp"
 
 uintptr_t GetBoneMatrix(uintptr_t entityPawn)
 {

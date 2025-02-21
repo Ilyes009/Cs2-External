@@ -1,10 +1,10 @@
 #pragma once
-#include <Memory/Memory.hpp>
-#include <Maths/Vector.hpp>
-#include <Globals/Globals.hpp>
-#include <Maths/ViewMatrix.hpp>
-#include <Readers/Entity.hpp>
-#include <Readers/LocalPlayer.hpp>
+#include "../../Source/Memory/Memory.hpp"
+#include "../../Source/Maths/Vector.hpp"
+#include "../../Source/Globals/Globals.hpp"
+#include "../../Source/Maths/ViewMatrix.hpp"
+#include "Entity.hpp"
+#include "LocalPlayer.hpp"
 
 class Game
 {

@@ -1,9 +1,9 @@
 #pragma once
 #include <fstream>
-#include <Json/Json.hpp>
-#include <Globals/Globals.hpp>
+#include "../ExternalLibs/Json/Json.hpp"
+#include "../Globals/Globals.hpp"
 #include <filesystem>
-#include <Interfaces/LSConfigSystem.hpp>
+#include "../Interfaces/LSConfigSystem.hpp"
 
 using json = nlohmann::json;
 
@@ -17,7 +17,7 @@ void SaveSettings(const std::string& filename)
     std::ofstream file(filename);
     if (file.is_open())
     {
-        file << ExeJsonConfig.dump(4); // Save with 4-space indentation
+        file << ExeJsonConfig.dump(4); 
         file.close();
     }
     else
@@ -31,7 +31,7 @@ void LoadSettings(const std::string& filename)
     json Data;
 
     if (!FileExists(filename)) {
-        // std::cout << filename << " not found." << std::endl;
+       
         return;
     }
 

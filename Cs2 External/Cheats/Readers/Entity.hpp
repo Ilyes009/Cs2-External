@@ -1,12 +1,12 @@
 #pragma once
-#include <Memory/Memory.hpp>
-#include <Maths/Vector.hpp>
-#include <Globals/Globals.hpp>
-#include <ImGui/imgui.h>
-#include <Utilities/Bones.hpp>
 
-class Entities
-{
+#include "../../Source/Memory/Memory.hpp"
+#include "../../Source/Maths/Vector.hpp"
+#include "../../Source/Globals/Globals.hpp"
+#include "../../Source/ExternalLibs/ImGui/imgui.h"
+#include "../Utilities/Bones.hpp"
+
+class Entities {
 public:
     int Team;
     int Health;
@@ -19,19 +19,20 @@ public:
     Vector3 VecViewOffset;
     bool IsScoped;
     bool IsDormant;
+
 public:
-    void UpdateEntities(uintptr_t currentPawn, uintptr_t currentController)
-    {
-        // Read player name
+    // Met à jour les informations de l'entité en lisant la mémoire du processus cible.
+    void UpdateEntities(uintptr_t currentPawn, uintptr_t currentController) {
+        // Lecture du nom du joueur
         uintptr_t NameAddress = mem.ReadMemory<uintptr_t>(currentController + Offsets::m_sSanitizedPlayerName);
         mem.ReadArray<char>(NameAddress, Names, sizeof(Names));
 
-        // Read other attributes
+        // Lecture des autres attributs
         Team = mem.ReadMemory<int>(currentPawn + Offsets::m_iTeamNum);
         Health = mem.ReadMemory<int>(currentPawn + Offsets::m_iHealth);
         Armor = mem.ReadMemory<int>(currentPawn + Offsets::m_ArmorValue);
         Position = mem.ReadMemory<Vector3>(currentPawn + Offsets::m_vOldOrigin);
-        BoneMatrix = GetBoneMatrix(currentPawn);
+        BoneMatrix = GetBoneMatrix(currentPawn); // La fonction GetBoneMatrix doit être définie ailleurs dans votre projet
         IsFiring = mem.ReadMemory<bool>(currentPawn + Offsets::m_iShotsFired);
         Ping = mem.ReadMemory<uint32_t>(currentController + Offsets::m_iPing);
         VecViewOffset = mem.ReadMemory<Vector3>(currentPawn + Offsets::m_vecViewOffset);
@@ -39,29 +40,23 @@ public:
         IsDormant = mem.ReadMemory<bool>(currentPawn + Offsets::m_bDormant);
     }
 
-    float GetHeadHeight(Vector2 screenPos, Vector2 headScreenPos)
-    {
-        return (screenPos.y - headScreenPos.y) / 8;
+    // Calcule la hauteur de la tête à partir des positions écran (pour l'affichage par exemple)
+    float GetHeadHeight(Vector2 screenPos, Vector2 headScreenPos) {
+        return (screenPos.y - headScreenPos.y) / 8.0f;
     }
 
-    ImColor GetColorHealth()
-    {
+    // Retourne une couleur basée sur la santé de l'entité
+    ImColor GetColorHealth() {
         if (Health >= 100)
-        {
-            return ImColor(0, 255, 0, 255); // Green for full health
-        }
+            return ImColor(0, 255, 0, 255);   // Vert : santé complète
         else if (Health >= 60)
-        {
-            return ImColor(255, 255, 0, 255); // Yellow for medium health
-        }
+            return ImColor(255, 255, 0, 255); // Jaune : santé moyenne
         else if (Health >= 30)
-        {
-            return ImColor(255, 165, 0, 255); // Orange for low health
-        }
+            return ImColor(255, 165, 0, 255); // Orange : santé faible
         else
-        {
-            return ImColor(255, 0, 0, 255); // Red for critical health
-        }
+            return ImColor(255, 0, 0, 255);   // Rouge : santé critique
     }
+};
 
-}; inline Entities entities[64];
+// Instance globale (inline) d'un tableau de 64 entités (compatible avec C++17)
+inline Entities entities[64];

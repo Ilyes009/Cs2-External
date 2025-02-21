@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Globals/Includes.hpp>
+#include "../Globals/Includes.hpp"
 
 using namespace std;
 using Module = const wchar_t*;
