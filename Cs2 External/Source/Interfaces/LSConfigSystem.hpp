@@ -1,8 +1,8 @@
 #pragma once
 #include <fstream>
-#include <Json/Json.hpp>
-#include <Utilities/Config.hpp>
-#include <Globals/Globals.hpp>
+#include "../ExternalLibs/Json/Json.hpp"
+#include "../../Cheats/Utilities/DrawUtils.hpp"
+#include "../Globals/Globals.hpp"
 #include <filesystem>
 
 using json = nlohmann::json;

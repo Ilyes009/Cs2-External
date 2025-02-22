@@ -1,10 +1,9 @@
 #pragma once
-#include <Globals/Globals.hpp>
-#include <Memory/Memory.hpp>
-#include <Maths/Vector.hpp>
-#include <Readers/Game.hpp>
-#include <Readers/LocalPlayer.hpp>
-
+#include "../../Source/Globals/Globals.hpp"
+#include "../../Source/Memory/Memory.hpp"
+#include "../../Source/Maths/Vector.hpp"
+#include "../Readers/Game.hpp"
+#include "../Readers/LocalPlayer.hpp"
 class C4
 {
 public:

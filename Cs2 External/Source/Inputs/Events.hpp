@@ -1,6 +1,8 @@
 #pragma once
 #include <WinUser.h>
-#include <Maths/Vector.hpp>
+
+#include "../Maths/Vector.hpp"
+
 
 namespace Events
 {

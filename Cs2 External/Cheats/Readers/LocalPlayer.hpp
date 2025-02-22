@@ -1,7 +1,7 @@
 #pragma once
-#include <Memory/Memory.hpp>
-#include <Maths/Vector.hpp>
-#include <Globals/Globals.hpp>
+#include "../../Source/Memory/Memory.hpp"
+#include "../../Source/Maths/Vector.hpp"
+#include "../../Source/Globals/Globals.hpp"
 
 class LocalPlayer
 {

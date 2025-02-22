@@ -1,12 +1,18 @@
 #pragma once
-#include <Memory/Memory.hpp>
-#include <Readers/Game.hpp>
-#include <Readers/LocalPlayer.hpp>
-#include <Utilities/Config.hpp>
-#include <Utilities/DrawUtils.hpp>
-#include <Maths/WorldToScreen.hpp>
-#include <Utilities/Bomb.hpp>
-#include <Utilities/World.hpp>
+
+// Inclusion des fichiers depuis Source/
+#include "../../Source/Memory/Memory.hpp"
+#include "../../Source/Maths/WorldToScreen.hpp"
+
+// Inclusion des fichiers depuis Cheats/Readers/
+#include "../Readers/Game.hpp"
+#include "../Readers/LocalPlayer.hpp"
+
+// Inclusion des fichiers depuis Cheats/Utilities/
+#include "../Utilities/Config.hpp"
+#include "../Utilities/DrawUtils.hpp"
+#include "../Utilities/Bomb.hpp"
+#include "../Utilities/World.hpp"
 
 
 VOID PLAYER_ESP() // Main Loop
@@ -107,7 +113,7 @@ VOID PLAYER_ESP() // Main Loop
 							Config::Esp::BoxThickness
 						);
 					}
-					
+
 				}
 				else if (Config::Esp::currentBoxDimensionIndex == 1)
 				{

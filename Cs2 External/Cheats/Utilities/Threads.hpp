@@ -1,5 +1,6 @@
 #pragma once
-#include <Hacks/Triggerbot.hpp>
+#include "../Hacks/Triggerbot.hpp"
+
 
 namespace Threads
 {

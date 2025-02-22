@@ -1,6 +1,8 @@
 #pragma once
-#include <Memory/Memory.hpp>
-#include <Globals/Globals.hpp>
+#pragma once
+#include "../../Source/Memory/Memory.hpp"
+#include "../../Source/Globals/Globals.hpp"
+
 
 VOID BHOP()
 {

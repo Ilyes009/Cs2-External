@@ -1,22 +1,21 @@
 #pragma once
 
-// Libs 
-#include <ImGui/imgui.h>
-#include <ImGui/imgui_impl_dx11.h>
-#include <ImGui/imgui_impl_win32.h>
 #include <d3d11.h>
 #include <dwmapi.h>
-#include <Globals/Globals.hpp>
-#include <Functions/Console.hpp>
-#include <Interfaces/Loader.hpp>
-#include <Interfaces/Interfaces.hpp>
-#include <Readers/Entity.hpp>
-#include <Readers/Game.hpp>
-#include <Readers/LocalPlayer.hpp>
-#include <Hacks/Loop.hpp>
-#include <Utilities/Threads.hpp>
-#include <Overlay/Message.hpp>
+#include "../ExternalLibs/ImGui/imgui.h"
+#include "../ExternalLibs/ImGui/imgui_impl_dx11.h"
+#include "../ExternalLibs/ImGui/imgui_impl_win32.h"
+#include "../Globals/Globals.hpp"
+#include "../Functions/Console.hpp"
+#include "../Interfaces/Loader.hpp"
+#include "../Interfaces/Interfaces.hpp"
+#include "../../Cheats/Readers/Entity.hpp"
+#include "../../Cheats/Readers/Game.hpp"
+#include "../../Cheats/Readers/LocalPlayer.hpp"
+#include "../../Cheats/Hacks/Loop.hpp"
+#include "../../Cheats/Utilities/Threads.hpp"
 
+#include "Message.hpp"
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 LRESULT CALLBACK Window_Procedure(HWND window, UINT message, WPARAM w_param, LPARAM l_param)
@@ -65,7 +64,7 @@ HWND InitializeWindow(HINSTANCE instance, int cmd_show)
         nullptr,
         wc.hInstance,
         nullptr
-    );   
+    );
 
     SetLayeredWindowAttributes(window, RGB(0, 0, 0), BYTE(255), LWA_COLORKEY);
 
@@ -139,7 +138,7 @@ VOID InitializeImGui(HWND window, ID3D11Device* device, ID3D11DeviceContext* dev
     ImGui::StyleColorsDark();
     ImGui_ImplWin32_Init(window);
     ImGui_ImplDX11_Init(device, device_context);
-    ImGui_Loader::LoadFont();   
+    ImGui_Loader::LoadFont();
 }
 
 VOID CleanUp(IDXGISwapChain* swap_chain, ID3D11Device* device, ID3D11DeviceContext* device_context, ID3D11RenderTargetView* render_target_view, HWND window, WNDCLASSEXW wc)
@@ -161,17 +160,12 @@ VOID CleanUp(IDXGISwapChain* swap_chain, ID3D11Device* device, ID3D11DeviceConte
 VOID ShowTitle()
 {
     vector<string> CheatTitle = {
-        "   ___ ___ ___   _____  ___________ ___ _  _   _   _     ",
-        "  / __/ __|_  ) | __\\ \\/ /_   _| __| _ \\ \\| | /_\\ | |    ",
-        " | (__\\__ \\/ /  | _| >  <  | | | _||   / .` |/ _ \\| |__ ",
-        "  \\___|___/___| |___/_/\\_\\ |_| |___|_|_\\_|\\_/_/ \\_\\____|",
-        "                                                       ",
-        "  ______   __  _   _          __  __    _____          ",
-        " | __ ) \\ / / | \\ | | ___  ___\\ \\/ /__ |___  |         ",
-        " |  _ \\\\ V /  |  \\| |/ _ \\/ _ \\\\  // _` | / /          ",
-        " | |_)| | |   | |\\  |  __/ (_) /  \\ (_| |/ /           ",
-        " |____/ |_|   |_| \\_|\\___|\\___/_/\\_\\__,_/_/            ",
-        "                                                       "
+        "___.                  .__    .__               ",
+        "\\_ |__ ___.__.   ____ |  |__ |__|_____   ____  ",
+        " | __ <   |  | _/ ___\\|  |  \\|  \\____ \\ /  _ \\ ",
+        " | \\_\\ \\___  | \\  \\___|   Y  \\  |  |_> >  <_> )",
+        " |___  / ____|  \\___  >___|  /__|   __/ \\____/ ",
+        "     \\/\\/           \\/     \\/   |__|           "
     };
 
     for (const auto& line : CheatTitle) {
@@ -202,7 +196,7 @@ VOID ShowTitle()
         cout << " [+] Updating Game Vars\n";
         cout << '\n';
         cout << " [+] Cheat Attached! \n";
-       // CreateLogNotification("Memory", "CONERR$");   
+        // CreateLogNotification("Memory", "CONERR$");   
     }
     else
     {

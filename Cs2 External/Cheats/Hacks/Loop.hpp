@@ -1,11 +1,11 @@
 ﻿#pragma once
-#include <Hacks/Aimbot.hpp>
-#include <Hacks/Esp.hpp>
+#include "Aimbot.hpp"
+#include "Esp.hpp"
 #include "Antiflash.hpp"
 #include "Rcs.hpp"
 #include "Bhop.hpp"
 #include "FovChanger.hpp"
-#include <Hacks/SensiChanger.hpp>
+#include "SensiChanger.hpp"
 
 namespace CHEATS
 {

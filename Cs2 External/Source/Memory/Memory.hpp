@@ -1,5 +1,13 @@
 #pragma once
-#include <Globals/Includes.hpp>
+
+#include "../Globals/Includes.hpp"   // Ajustez ce chemin si nécessaire
+#include "../Maths/Vector.hpp"         // Pour les types de vecteurs utilisés (si requis)
+#include <windows.h>
+#include <vector>
+#include <algorithm>
+#include <cwctype>
+#include <string>
+
 
 #define WIN32_LEAN_AND_MEAN
 

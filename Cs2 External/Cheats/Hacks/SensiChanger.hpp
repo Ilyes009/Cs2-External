@@ -1,7 +1,7 @@
 #pragma once
-#include <Memory/Memory.hpp>
-#include <Globals/Globals.hpp>
-#include <Utilities/Config.hpp>
+#include "../../Source/Memory/Memory.hpp"
+#include "../../Source/Globals/Globals.hpp"
+#include "../Utilities/Config.hpp"
 
 VOID ChangeSensi()
 {

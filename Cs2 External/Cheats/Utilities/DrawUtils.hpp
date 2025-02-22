@@ -1,10 +1,11 @@
 #pragma once
-#include <ImGui/imgui.h>
-#include <Maths/Vector.hpp>
-#include <Maths/WorldToScreen.hpp>
-#include <Utilities/Config.hpp>
-#include <Readers/Entity.hpp>
-#include <Readers/Game.hpp>
+#include "../../Source/ExternalLibs/ImGui/imgui.h"
+#include "../../Source/Maths/Vector.hpp"
+#include "../../Source/Maths/WorldToScreen.hpp"
+#include "../Utilities/Config.hpp"
+#include "../Readers/Entity.hpp"
+#include "../Readers/Game.hpp"
+
 
 namespace DrawUtils
 {

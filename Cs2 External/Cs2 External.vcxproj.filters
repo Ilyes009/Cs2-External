@@ -185,5 +185,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Source\ExternalLibs\Fonts\Roboto-Bold.hpp" />
+    <None Include="offsets\buttons.json" />
+    <None Include="offsets\client_dll.json" />
+    <None Include="offsets\offsets.json" />
   </ItemGroup>
 </Project>

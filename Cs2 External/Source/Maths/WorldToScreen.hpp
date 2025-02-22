@@ -1,7 +1,9 @@
 #pragma once
-#include <Maths/Vector.hpp>
-#include <Maths/ViewMatrix.hpp>
-#include <Globals/Globals.hpp>
+#include "Vector.hpp"
+#include "ViewMatrix.hpp"
+#include "../Globals/Globals.hpp"
+
+
 
 inline bool WorldToScreen(const Vector3& worldPos, Vector2& screenPos, const view_matrix_t& viewMatrix)
 {

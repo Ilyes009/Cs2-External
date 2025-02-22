@@ -128,6 +128,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -198,6 +199,9 @@
     <ClInclude Include="Source\Overlay\Overlay.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="offsets\buttons.json" />
+    <None Include="offsets\client_dll.json" />
+    <None Include="offsets\offsets.json" />
     <None Include="Source\ExternalLibs\Fonts\Roboto-Bold.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

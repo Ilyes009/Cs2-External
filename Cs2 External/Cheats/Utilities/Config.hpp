@@ -1,6 +1,6 @@
 #pragma once
-#include <Maths/Vector.hpp>
-#include <Readers/LocalPlayer.hpp>
+#include "../Maths/Vector.hpp"
+#include "../Readers/LocalPlayer.hpp"
 
 namespace Config
 {

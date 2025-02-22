@@ -1,5 +1,5 @@
 #pragma once
-#include <Globals/Includes.hpp>
+#include "../Globals/Globals.hpp"
 
 VOID ShowErrorBox(const std::wstring& errorMessage, const std::wstring& errorTitle = L"Error")
 {

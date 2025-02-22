@@ -1,14 +1,19 @@
 #pragma once
-#include <Maths/Vector.hpp>
-#include <Maths/WorldToScreen.hpp>
-#include <Maths/ViewMatrix.hpp>
-#include <Memory/Memory.hpp>
-#include <Readers/LocalPlayer.hpp>
-#include <Readers/Entity.hpp>
-#include <Readers/Game.hpp>
-#include <Utilities/Config.hpp>
-#include <Utilities/Bones.hpp>
-#include <Inputs/Events.hpp>
+
+#include <windows.h>
+#include <cmath>
+
+#include "../../Source/Maths/Vector.hpp"
+#include "../../Source/Maths/WorldToScreen.hpp"
+#include "../../Source/Maths/ViewMatrix.hpp"
+#include "../../Source/Memory/Memory.hpp"
+#include "../../Source/Inputs/Events.hpp"
+
+#include "../Readers/LocalPlayer.hpp"
+#include "../Readers/Game.hpp"
+#include "../Readers/Entity.hpp"  
+#include "../Utilities/Config.hpp"
+#include "../Utilities/Bones.hpp"
 
 class AIMBOT
 {
